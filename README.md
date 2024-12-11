@@ -13,4 +13,4 @@ Fig The overall architecture of the proposed framework for expiration date detec
 
 The proposed framework can handle challenging expiration date cases and distinguish 13 different date formats. It can detect and understand the expiration dates even when the input image contains multiple dates.Moreover, the proposed framework can detect date, days remaining from the current date.
 
-
+![Screenshot 2024-12-11 191947](https://github.com/user-attachments/assets/ebed1d0e-d085-4ed8-9c3c-d2c8b2d854ea)
