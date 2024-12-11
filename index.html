@@ -1,99 +1,37 @@
-<!DOCTYPE html> 
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Flipkart Grid Submission</title>
-    <link rel="stylesheet" href="/static/css/style.css">
+    <title>Flipkart Grid 6.0 Robotics Challenge</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <!-- Header Section -->
     <header>
-        <h1>Flipkart Grid Robotics 6.0 Challenge</h1>
-        <p>Explore our models</p>
+        <div class="header-content">
+            <img src="assets/flipkart-logo.png" alt="Flipkart Logo" class="logo">
+            <img src="assets/grid-logo.png" alt="Grid 6.0 Logo" class="logo">
+        </div>
+        <h1>FLIPKART GRID 6.0 ROBOTICS CHALLENGE</h1>
     </header>
 
+    <!-- Navigation Bar -->
+    <nav>
+        <ul>
+            <li><a href="https://object-expiry-date-detection-rqfddzcqsrpmecq6uspzhu.streamlit.app/">Item Counting</a></li>
+            <li><a href="https://freshness-detection-8vgxhma5h6ku2pvgz66yrc.streamlit.app/">Freshness Detection</a></li>
+            <li><a href="item_counting.html">Brand Label Detection</a></li>
+            <li><a href="expiry_date.html">Expiry Date Detection</a></li>
+        </ul>
+    </nav>
+
+    <!-- Main Content -->
     <main>
-        <!-- Section 1: Expiry Date Detection -->
         <section>
-            <h2>Expiry Date Detection</h2>
-            <p>Upload an image to detect the expiry date of products.</p>
-            <form id="expiryForm" action="http://127.0.0.1:5000/upload" method="POST" enctype="multipart/form-data">
-                <input type="file" name="image" id="expiryImage" required>
-                <button type="submit">Detect Expiry Date</button>
-            </form>
-            <div id="expiryLoading" class="loading" style="display: none;">Processing...</div>
-            <div id="expiryResult" style="display: none;">
-                <p id="expiryText"></p>
-            </div>
-        </section>
-
-        <!-- Section 2: Brand Detection -->
-        <section>
-            <h2>Brand Detection</h2>
-            <p>Upload an image to identify the brand of products.</p>
-            <form id="brandForm" action="/process_brand_detection" method="POST" enctype="multipart/form-data">
-                <input type="file" name="image" id="brandImage" required>
-                <button type="submit">Detect Brand</button>
-            </form>
-            <div id="brandLoading" class="loading" style="display: none;">Processing...</div>
-        </section>
-
-        <!-- Section 3: Item Counting -->
-        <section>
-            <h2>Item Counting</h2>
-            <p>Upload an image to count the total number of items on the shelf.</p>
-            <form id="countForm" action="/process_item_counting" method="POST" enctype="multipart/form-data">
-                <input type="file" name="image" id="countImage" required>
-                <button type="submit">Count Items</button>
-            </form>
-            <div id="countLoading" class="loading" style="display: none;">Processing...</div>
-        </section>
-
-        <!-- Section 4: Freshness Detection -->
-        <section>
-            <h2>Freshness Detection</h2>
-            <p>Upload an image to check the freshness of fruits and vegetables.</p>
-            <form id="freshnessForm" action="/process_freshness_detection" method="POST" enctype="multipart/form-data">
-                <input type="file" name="image" id="freshnessImage" required>
-                <button type="submit">Detect Freshness</button>
-            </form>
-            <div id="freshnessLoading" class="loading" style="display: none;">Processing...</div>
+            <h2>Welcome!</h2>
+            <p>Click on the navigation bar items to explore individual features.</p>
         </section>
     </main>
-
-    <footer>
-        <p>&copy;Flipkart Grid Challenge</p>
-    </footer>
-
-    <script>
-        // Function to handle form submission and show loading message
-        document.querySelectorAll('form').forEach(form => {
-            form.addEventListener('submit', function(e) {
-                e.preventDefault();
-                let loadingElement = document.getElementById(form.id + 'Loading');
-                loadingElement.style.display = 'block';
-
-                let formData = new FormData(form);
-                let formAction = form.action;
-
-                // Sending the form data to the Flask server
-                fetch(formAction, {
-                    method: 'POST',
-                    body: formData
-                })
-                .then(response => response.json())
-                .then(data => {
-                    loadingElement.style.display = 'none';
-                    document.getElementById('expiryResult').style.display = 'block';
-                    document.getElementById('expiryText').textContent = 
-                        `Manufacturing Date: ${data['Manufacturing Date']}, Expiry Date: ${data['Expiry Date']}, Days Remaining: ${data['Days Remaining']}`;
-                })
-                .catch(error => {
-                    loadingElement.style.display = 'none';
-                    alert('Error processing the image');
-                });
-            });
-        });
-    </script>
 </body>
 </html>
