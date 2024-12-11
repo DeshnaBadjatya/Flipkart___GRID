@@ -1,92 +1,83 @@
-/* Global styles */
+/* General Styles */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f5f5f5;
-    color: #333;
+    background-color: #f4f4f4;
+}
+
+/* Smooth Scrolling */
+html {
+    scroll-behavior: smooth;
 }
 
 /* Header */
 header {
-    background-color: #2874f0; /* Flipkart blue */
+    display: flex;
+    align-items: center;
+    background-color: #2874f0;
     color: white;
+    padding: 10px 20px;
+    position: relative; /* Allows absolute positioning for the heading */
+}
+.header-content {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Reduced spacing between the logos */
+}
+.logo {
+    width: 80px; /* Ensures both logos are the same size */
+    height: auto;
+}
+header h1 {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 24px;
+    margin: 0;
     text-align: center;
-    padding: 20px;
-    animation: slideIn 1s ease-out;
 }
 
-/* Animations */
-@keyframes slideIn {
-    0% {
-        transform: translateX(-100%);
-    }
-    100% {
-        transform: translateX(0);
-    }
+/* Navigation Bar */
+nav {
+    background-color: #333;
+    padding: 0; /* Remove extra padding */
+}
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 15px; /* Add spacing between navigation items */
+}
+nav ul li {
+    margin: 0; /* Minimize spacing within list items */
+}
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 16px;
+    padding: 10px 15px; /* Adjust padding for a cleaner look */
+    display: block;
+    border-radius: 4px; /* Slightly round the edges */
+    transition: background-color 0.3s ease; /* Smooth hover effect */
+}
+nav ul li a:hover {
+    background-color: #575757;
 }
 
-@keyframes fadeIn {
-    0% {
-        opacity: 0;
-    }
-    100% {
-        opacity: 1;
-    }
-}
-
-/* Main Section */
+/* Main Content */
 main {
     padding: 20px;
-    display: grid;
-    grid-template-columns: 1fr 1fr; /* Two columns for sections */
-    gap: 20px;
 }
-
-/* Section Styles */
 section {
-    background: white;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    border-radius: 10px;
+    margin-bottom: 40px;
     padding: 20px;
-    text-align: center;
-    animation: fadeIn 1.5s ease-in-out;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
-
-section h2 {
-    color: #2874f0;
-    margin-bottom: 10px;
-    animation: fadeIn 1.5s ease-in-out;
-}
-
-section p {
-    font-size: 14px;
-    margin-bottom: 20px;
-}
-
-/* Hover effects on buttons */
-button {
-    background-color: #ff6200; /* Flipkart orange */
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-
-/* Button hover effect */
-button:hover {
-    background-color: #e05500;
-    transform: scale(1.1); /* Slightly enlarges on hover */
-}
-
-/* Footer */
-footer {
-    background-color: #222;
-    color: white;
-    text-align: center;
-    padding: 10px 0;
-    margin-top: 20px;
-    animation: fadeIn 2s ease-in-out;
+h2 {
+    color: #333;
 }
