@@ -16,6 +16,8 @@ The proposed framework can handle challenging expiration date cases and distingu
 ![Screenshot 2024-12-11 191947](https://github.com/user-attachments/assets/ebed1d0e-d085-4ed8-9c3c-d2c8b2d854ea)
 
 
+
+
    ## ITEM COUNTING WITH YOLO & LIVE WEBCAMERA FEED
 
 This project is a real-time item counting system designed to identify and count items using live webcam feeds. By leveraging cutting-edge technologies such as YOLOv8s, Pandas, and Ultralytics, the system ensures accurate and efficient object detection and counting.
@@ -27,11 +29,13 @@ Features
 - Live Visualization: Displays item counts directly on the webcam feed with visual overlays.
 - Data Persistence: Saves item counts and maximum counts to CSV files for further analysis
 
-Live Feed with Annotations
+
 ![Screenshot 2024-12-13 164030](https://github.com/user-attachments/assets/9abd30a1-b148-44ca-953a-451761801675)
 
+Live Feed with Annotations
 
 CSV output 
+
 Frame Number | Item Count |
 
 | 1          |   49       |
