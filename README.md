@@ -27,16 +27,13 @@ Features
 - Live Visualization: Displays item counts directly on the webcam feed with visual overlays.
 - Data Persistence: Saves item counts and maximum counts to CSV files for further analysis
 
-*Example Output*
 Live Feed with Annotations
 
 
-CSV Output
-item_counts.csv:
------------------------------
-| Frame Number | Item Count |
-| 1            |   49       |
------------------------------
+CSV output 
+Frame Number | Item Count |
+| 1          |   49       |
+
 
 Installation
 - Clone the repository
