@@ -28,10 +28,12 @@ Features
 - Data Persistence: Saves item counts and maximum counts to CSV files for further analysis
 
 Live Feed with Annotations
+![Screenshot 2024-12-13 164030](https://github.com/user-attachments/assets/9abd30a1-b148-44ca-953a-451761801675)
 
 
 CSV output 
 Frame Number | Item Count |
+
 | 1          |   49       |
 
 
